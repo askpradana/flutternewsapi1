@@ -3,7 +3,7 @@
 ##Screenshot
 ![image1](images/image1.png)
 ![image2](images/image2.png)
-![image3](images/image3.png)
+![gif1](images/giif1.gif)
 
 ##How to re run this apps locally
 
