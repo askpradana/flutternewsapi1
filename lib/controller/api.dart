@@ -5,7 +5,8 @@ import 'package:newsapi_wallstreetjournal/model/model.dart';
 Future<NewsModel> fetchNews() async {
   final response = await http.get(
     Uri.parse(
-        'https://newsapi.org/v2/everything?domains=wsj.com&apiKey=APIKEY'),
+        //TODO FIXME: Delete my api before git please!
+        'https://newsapi.org/v2/everything?domains=wsj.com&apiKey=1186c5f49a794aad8265af3ab9964ec7'),
   );
 
   if (response.statusCode == 200) {

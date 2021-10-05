@@ -17,6 +17,8 @@
 ##Future plan
 
 1. Add click function to read the news
+2. Fix readme.md
+3. PageView
 
 ##Foot note
 _Not yet_
