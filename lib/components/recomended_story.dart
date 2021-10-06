@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapi_wallstreetjournal/components/read_story.dart';
 import 'package:newsapi_wallstreetjournal/controller/api.dart';
 import 'package:newsapi_wallstreetjournal/model/model.dart';
 
@@ -38,6 +39,7 @@ class _ManggilRecommendedStoryState extends State<ManggilRecommendedStory> {
                   gambar: snapshot.data!.articles![maprandom[index]].urlToImage
                       .toString(),
                   judul: snapshot.data!.articles![maprandom[index]].title!,
+                  url: snapshot.data!.articles![maprandom[index]].url!,
                   menit: minrandom[index] + 2,
                 );
               },
@@ -53,62 +55,74 @@ class _ManggilRecommendedStoryState extends State<ManggilRecommendedStory> {
   }
 }
 
-class RekomenStory extends StatelessWidget {
+class RekomenStory extends StatefulWidget {
   const RekomenStory({
     Key? key,
     required this.gambar,
     required this.judul,
+    required this.url,
     required this.menit,
   }) : super(key: key);
   final String gambar;
   final String judul;
+  final String url;
   final int menit;
 
+  @override
+  State<RekomenStory> createState() => _RekomenStoryState();
+}
+
+class _RekomenStoryState extends State<RekomenStory> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 130,
-      child: Card(
-        color: Color(0xff1F1F1F),
-        margin: EdgeInsets.symmetric(
-          horizontal: 10,
-          vertical: 5,
-        ),
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 1, horizontal: 10),
-          child: Row(
-            children: [
-              Expanded(
-                child: Image.network(
-                  gambar,
-                  fit: BoxFit.fill,
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 5),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        judul,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 2,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 5),
-                        child: Text(
-                          "$menit mins read",
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ),
-                    ],
+      child: GestureDetector(
+        onTap: () {
+          handleRead(widget.url);
+        },
+        child: Card(
+          color: Color(0xff1F1F1F),
+          margin: EdgeInsets.symmetric(
+            horizontal: 10,
+            vertical: 5,
+          ),
+          child: Container(
+            padding: EdgeInsets.symmetric(vertical: 1, horizontal: 10),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Image.network(
+                    widget.gambar,
+                    fit: BoxFit.fill,
                   ),
                 ),
-              ),
-            ],
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.judul,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 5),
+                          child: Text(
+                            "${widget.menit} mins read",
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

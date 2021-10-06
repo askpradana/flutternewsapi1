@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapi_wallstreetjournal/components/read_story.dart';
 import 'package:newsapi_wallstreetjournal/controller/api.dart';
 import 'package:newsapi_wallstreetjournal/model/model.dart';
 import 'package:newsapi_wallstreetjournal/pages/read_news.dart';
@@ -48,11 +49,11 @@ class _ManggilNewStoryState extends State<ManggilNewStory>
                     gambar: snapshot.data!.articles[maprandom[index]].urlToImage
                         .toString(),
                     judul: snapshot.data!.articles![maprandom[index]].title,
-                    author: snapshot.data!.articles![maprandom[index]].author,
-                    publishedAt:
-                        snapshot.data!.articles[maprandom[index]].publishedAt,
+                    // author: snapshot.data!.articles![maprandom[index]].author,
+                    // publishedAt:
+                    //     snapshot.data!.articles[maprandom[index]].publishedAt,
                     url: snapshot.data!.articles[maprandom[index]].url,
-                    content: snapshot.data!.articles[maprandom[index]].content,
+                    // content: snapshot.data!.articles[maprandom[index]].content,
                     menit: minrandom[index] + 2,
                   );
                 },
@@ -75,36 +76,24 @@ class StoryBaru extends StatelessWidget {
     required this.gambar,
     required this.judul,
     required this.menit,
-    required this.author,
-    required this.publishedAt,
+    // required this.author,
+    // required this.publishedAt,
     required this.url,
-    required this.content,
+    // required this.content,
   }) : super(key: key);
   final String gambar;
   final String judul;
-  final String author;
-  final String publishedAt;
+  // final String author;
+  // final String publishedAt;
   final String url;
-  final String content;
+  // final String content;
   final int menit;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => BacaBerita(
-              judul: judul,
-              gambar: gambar,
-              author: author,
-              content: content,
-              publishedAt: publishedAt,
-              url: url,
-            ),
-          ),
-        );
+        handleRead(url);
       },
       child: Container(
         padding: EdgeInsets.all(8),

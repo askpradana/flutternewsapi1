@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BacaBerita extends StatefulWidget {
   const BacaBerita({
@@ -23,6 +24,14 @@ class BacaBerita extends StatefulWidget {
 }
 
 class _BacaBeritaState extends State<BacaBerita> {
+  handlebtn() async {
+    if (await canLaunch(widget.url)) {
+      return launch(widget.url);
+    } else {
+      throw 'cant launc ${widget.url}';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
@@ -37,10 +46,10 @@ class _BacaBeritaState extends State<BacaBerita> {
         Text(widget.publishedAt),
         Text(widget.author),
         Text(widget.content),
-        // ElevatedButton(
-        //   onPressed: () {},
-        //   child: Text("Button"),
-        // ),
+        ElevatedButton(
+          onPressed: handlebtn,
+          child: Text("Button"),
+        ),
       ],
     ));
   }
