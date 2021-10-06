@@ -37,10 +37,10 @@ class _BacaBeritaState extends State<BacaBerita> {
         Text(widget.publishedAt),
         Text(widget.author),
         Text(widget.content),
-        ElevatedButton(
-          onPressed: () {},
-          child: Text("Button"),
-        ),
+        // ElevatedButton(
+        //   onPressed: () {},
+        //   child: Text("Button"),
+        // ),
       ],
     ));
   }
