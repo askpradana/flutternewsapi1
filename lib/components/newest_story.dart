@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:newsapi_wallstreetjournal/components/read_story.dart';
 import 'package:newsapi_wallstreetjournal/controller/api.dart';
 import 'package:newsapi_wallstreetjournal/model/model.dart';
-import 'package:newsapi_wallstreetjournal/pages/read_news.dart';
 
 class ManggilNewStory extends StatefulWidget {
   const ManggilNewStory({Key? key}) : super(key: key);
