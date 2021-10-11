@@ -14,15 +14,12 @@ As a person, I only want to read my news, I dont want to setting anything, insta
 
 ---
 
-<table>
-<td>
-<tr valign='top'><img src="./images/app_screenshot/1.png" width=20%  alt='homepage'></tr>
-<tr valign='top'><img src="./images/app_screenshot/2.png" width=20%  alt='searchbar'></tr>
-<tr valign='top'><img src="./images/app_screenshot/3.png" width=20%  alt='profilepage'><tr>
-<tr valign='top'><img src="./images/app_screenshot/4.png" width=20%  alt='previewlink'>
-</tr>
-</td>
-</table>
+<div>
+<img align=top src="./images/app_screenshot/1.png" width=20%  alt='homepage'>
+<img align=top src="./images/app_screenshot/2.png" width=20%  alt='searchbar'>
+<img align=top src="./images/app_screenshot/3.png" width=20%  alt='profilepage'>
+<img align=top src="./images/app_screenshot/4.png" width=20%  alt='previewlink'>
+</div>
 
 ## How to re run this apps locally
 
