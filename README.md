@@ -45,3 +45,5 @@ _Currently I have nothing in mind_
 _Not yet_
 
 **_Disclaimer_**: Original design can be found [here](https://dribbble.com/shots/13230921-News-Mobile-App/attachments/4833476?mode=media)
+
+License : The code in this repository is licensed under the GNU Affero General Public License v3.0. You can find the full text of the license in the [License](LICENSE.txt) file.
